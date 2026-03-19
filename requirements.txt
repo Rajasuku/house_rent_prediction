@@ -1,3 +1,5 @@
 streamlit
 scikit-learn
 category_encoders
+pickle
+numpy
