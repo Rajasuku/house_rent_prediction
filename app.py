@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import os
 
 #load The model
 model = pickle.load(open('rent_model.pkl', 'rb'))
@@ -44,3 +45,4 @@ encoded_data = encoder.transform(input_data)
 scaled_data = scaler.transform(encoded_data)
 prediction = model.predict(scaled_data)
 st.success(f"💰 Predicted Monthly Rent: ₹ {prediction[0]:,.2f}")
+port = int(os.environ.get("PORT", 8501))
